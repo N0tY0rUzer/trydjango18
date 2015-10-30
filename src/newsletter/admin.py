@@ -1,15 +1,15 @@
 from django.contrib import admin
 
 # Register your models here.
+
 # Relative import .models
-from .forms import SignUpForm
 from .models import SignUp
+# Relative import .forms
+from .forms import SignUpForm
 
 class SignUpAdmin(admin.ModelAdmin):
 	list_display = ["__str__", "timestamp", "updated"]
 	form = SignUpForm
-	#class Meta:
-	#	model = SignUp
 
 
 admin.site.register(SignUp, SignUpAdmin)
