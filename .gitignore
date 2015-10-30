@@ -1,6 +1,6 @@
-*Include/ 
-*Lib/ 
-*Scripts/ 
-*pip-selfcheck.json 
-*trydjango18.sublime-project 
-*trydjango18.sublime-workspace
+^Include/$
+^Lib/$ 
+^Scripts/$ 
+^pip-selfcheck.json$
+^trydjango18.sublime-project$
+^trydjango18.sublime-workspace$
