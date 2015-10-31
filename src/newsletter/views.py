@@ -82,6 +82,7 @@ def contact(request):
 			contact_message,
 			from_email,
 			to_email,
+			# html_message=some_html_message,
 			fail_silently=False)
 
 	context = {
