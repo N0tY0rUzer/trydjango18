@@ -21,6 +21,8 @@ class SignUpForm(forms.ModelForm):
 
 		'''Grab the email if passed initial validation. This is what django is doing, if it passes this, inspect further before submitting'''
 		email = self.cleaned_data.get('email')
+
+
 		'''Split the email into a base name and a provider e.g jcain, gmail.com'''
 		email_base, provider = email.split("@")
 		'''Split the provider into domain and extension e.g gmail.com'''
@@ -29,3 +31,8 @@ class SignUpForm(forms.ModelForm):
 		if not extension == 'edu':
 			raise forms.ValidationError("Please use a valid .edu email address.")
 		return email
+
+	def clean_full_name(self):
+		full_name = self.cleaned_data.get('full_name')
+		return full_name
+

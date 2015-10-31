@@ -8,14 +8,17 @@ def home(request):
 
 	'''Create SignUpForm object from POST data(if sent) or None if not sent'''
 	form = SignUpForm(request.POST or None)
-	'''Create context dict object; this will change if form.is_valid() returns true'''
+
+
+	'''Create context dict object containing the form instance(i.e the empty form) 
+	This will change if form.is_valid() returns true.'''
 	context = {
 		"title": title,
 		"form": form
 	}
 
 
-	'''Check to see if form has been validated and sent back'''
+	'''Check to see if form has passsed validation in forms.py'''
 	if form.is_valid():
 		#form.save()
 		# print(request.POST['email']) # not recommended to grab variables from the post dictionary
@@ -57,6 +60,9 @@ def contact(request):
 		message = form.cleaned_data.get('message')
 		full_name = form.cleaned_data.get("full_name")
 
+		'''Print key and values to console with <dictionary>.items()'''
+		for key, value in form.cleaned_data.items():
+			print(key, value)
 
 	context = {
 		"form": form

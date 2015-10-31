@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'hotmale776@gmail.com'
+EMAIL_HOST_PASSWORD = 'fetacheese7'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Application definition
 
