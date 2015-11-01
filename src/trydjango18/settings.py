@@ -106,16 +106,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 
-'''TODO: Add comments for static url, root, dirs and media url, root
-'''
+'''Set the static URL; URL patterns will match this'''
 STATIC_URL = '/static/'
 
+
+'''This is where "collectstatic" will send all the static files; also where static files are served'''
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_root")
 
+
+'''Place all static files locally here.'''
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static_in_pro", "our_static"),
 )
 
+
+'''Set the media URL; URL patterns will match this'''
 MEDIA_URL = '/media/'
+
+'''This is where end_user static files go such as user avatars'''
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root")
 
