@@ -12,7 +12,7 @@ def home(request):
 	form = SignUpForm(request.POST or None)
 
 
-	'''Create context dict object containing the form instance(i.e the empty form) 
+	'''Create context dictionary object containing the form instance(i.e the empty form) 
 	This will change if form.is_valid() returns true.'''
 	context = {
 		"title": title,
@@ -51,7 +51,7 @@ def home(request):
 			"title": "Thank yee!"
 		}
 		
-	return render(request, "home.html", context)
+	return render(request, "example_fluid.html", context)
 
 
 

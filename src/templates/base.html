@@ -27,25 +27,27 @@
   <body>
   {% include 'navbar.html' %}  
    
-    <div class="container">
+    <!-- Wrap Bootstrap in class='container' . This will also provide some padding around edges of elements -->
+    <!-- container-fluid will remove the padding; allowing elements to touch sides of screen -->
+    <div class="container-fluid">
     
-    <!-- Blocks mark inheritance area. This block will display the jumbotron info from home.html -->
-    {% block jumbotron %}
-    
-    <!-- Main component for a primary marketing message or call to action (Bootstrap) -->
-    <div class="jumbotron">
+      <!-- Blocks mark inheritance area. This 'block' tag will display the jumbotron info from home.html's jumbotron block tag -->
+      {% block jumbotron %}
       
-      {% block jumbotron_content %}
-      
+      <!-- Main component for a primary marketing message or call to action (Bootstrap) -->
+      <div class="jumbotron">
+        
+        {% block jumbotron_content %}
+        
+        {% endblock %}
+
+      </div>
       {% endblock %}
-      
-    </div>
-    {% endblock %}
 
 
-    {% block content %}
+      {% block content %}
 
-    {% endblock %}
+      {% endblock %}
       
 
     </div> <!-- /container -->
