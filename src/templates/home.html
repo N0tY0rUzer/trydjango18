@@ -1,6 +1,9 @@
 <!-- Inherit from base.html, and use it in home.html -->
 {% extends 'base.html' %}
 
+<!-- Apply 'load' template tags underneath 'extends', if present -->
+{% load crispy_forms_tags %}
+
 <!-- Block level context variable "super" pulls head_title content from parent document and inserts   -->
 {% block head_title %} Welcome | {{ block.super}} {% endblock %}
 
@@ -20,16 +23,22 @@
 
 
 {% block content %}
-<h1>{{ title }}</h1>
+<div class="row">
+<!-- The minimum amount the size of screen can be while still being column of 3 -->
+<!-- E.g col-xs-3 will set the minimum amount the screen can be while still being a column of 3 to xtra small; 
+     Essentially, no matter what screen size you're on it will be a column of 3 -->
+  <div class="col-sm-6 col-md-3">
+		<h1>{{ title }}</h1>
 
-{{ user }}
+		{{ user }}
 
-{{ request.user }}
+		{{ request.user }}
 
-<form method='POST' action=''>{% csrf_token %}
-	{{ form.as_p }}
+		<form method='POST' action=''>{% csrf_token %}
+			{{ form|crispy }}
 
-	<input class="btn btn-primary" type='submit' value='Signup'/>
-
-</form>
+			<input class="btn btn-primary" type='submit' value='Signup'/>
+		</form>
+	</div>
+</div>
 {% endblock %}

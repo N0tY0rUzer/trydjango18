@@ -36,12 +36,16 @@ EMAIL_USE_TLS = True
 # Application definition
 
 INSTALLED_APPS = (
+    # Django Apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third Party Apps
+    'crispy_forms',
+    # My Apps
     'newsletter',
 )
 
@@ -56,6 +60,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+# Points to src/trydjango18/urls.py; where to look for url patterns!
 ROOT_URLCONF = 'trydjango18.urls'
 
 TEMPLATES = [
@@ -126,3 +131,5 @@ MEDIA_URL = '/media/'
 '''This is where end_user static files go such as user avatars'''
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root")
 
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
