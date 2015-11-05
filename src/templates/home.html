@@ -9,14 +9,23 @@
 
 
 
-
 {% block jumbotron_content %}
-<h1>Navbar example</h1>
-<p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-<p>To see the difference between static and fixed top navbars, just scroll.</p>
-<p>
-<a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-</p>
+<div class="row">
+	<!-- The minimum amount the size of screen can be while still being column of 6 -->
+	<div class="col-sm-6">
+		<h1>Try Django 1.8</h1>
+		<p class='lead text-align-center'>The MVP Landing project is designed to get your project started. The goal is to help you launch as soon as possible with the least amount of investment using time or money. Join Us today.</p>
+		<p>
+		<a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join Us &raquo;</a>
+		</p>
+	</div>
+
+	<div class='col-sm-6' style='background-color: black;height: 300px'>
+
+	</div>
+
+
+</div>
 {% endblock %}
 
 
@@ -24,21 +33,35 @@
 
 {% block content %}
 <div class="row">
-<!-- The minimum amount the size of screen can be while still being column of 3 -->
-<!-- E.g col-xs-3 will set the minimum amount the screen can be while still being a column of 3 to xtra small; 
-     Essentially, no matter what screen size you're on it will be a column of 3. AKA you can essentially set 'defaults' with xs -->
-  <div class="col-sm-6 col-md-3">
-		<h1>{{ title }}</h1>
 
-		{{ user }}
 
-		{{ request.user }}
+
+
+	<!-- E.g col-xs-3 will set the minimum amount the screen can be while still being a column of 3 to xtra small; 
+	     Essentially, no matter what screen size you're on it will be a column of 3. AKA you can essentially set 'defaults' with xs -->
+    <!-- pull-right compiles to float: right!important; -->
+	<div class="col-sm-3 pull-right">
+
+		<p class='lead text-align-center'>{{ title }}</p>
+
 
 		<form method='POST' action=''>{% csrf_token %}
 			{{ form|crispy }}
 
-			<input class="btn btn-primary" type='submit' value='Signup'/>
+			<input class="btn btn-primary" type='submit' value='Sign Up'/>
+
 		</form>
+
 	</div>
+	<div class='col-sm-3'>
+		<p class='lead text-align-center'>Built with Django &amp; Bootstrap</p>
+	</div>
+	<div class='col-sm-3'>
+		<p class='lead text-align-center'>Created for starters of all kinds.</p>
+	</div>
+	<div class='col-sm-3'>
+		<p class='lead text-align-center'>Always Open Source</p>
+	</div>
+
 </div>
 {% endblock %}

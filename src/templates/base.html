@@ -18,6 +18,7 @@
 
     <!-- Included files are included right at rendering time -->
     {% include 'head_css.html' %}
+
     
   </head>
 
@@ -29,7 +30,7 @@
    
     <!-- Wrap Bootstrap in class='container' . This will also provide some padding around edges of elements -->
     <!-- container-fluid will remove the padding; allowing elements to touch sides of screen -->
-    <div class="container-fluid">
+    <div class="container">
     
       <!-- Blocks mark inheritance area. This 'block' tag will display the jumbotron info from home.html's jumbotron block tag -->
       {% block jumbotron %}

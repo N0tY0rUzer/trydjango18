@@ -51,7 +51,7 @@ def home(request):
 			"title": "Thank yee!"
 		}
 		
-	return render(request, "example_fluid.html", context)
+	return render(request, "home.html", context)
 
 
 
