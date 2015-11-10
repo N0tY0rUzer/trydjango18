@@ -56,6 +56,7 @@ def home(request):
 
 
 def contact(request):
+	title = 'Contact Us'
 	form = ContactForm(request.POST or None)
 	if form.is_valid():
 		form_email = form.cleaned_data.get('email')
@@ -86,6 +87,7 @@ def contact(request):
 			fail_silently=False)
 
 	context = {
-		"form": form
+		"form": form,
+		"title": title
 	}
 	return render(request, "forms.html", context)
