@@ -18,13 +18,18 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from newsletter import views as news_views
+from trydjango18 import views as trydjango18_views
+from accounts import urls as accounts_urls
+
 
 urlpatterns = [
-	url(r'^$', 'newsletter.views.home', name='home'),
-	url(r'^contact/$', 'newsletter.views.contact', name='contact'),
-    url(r'^about/$', 'trydjango18.views.about', name='about'),
+	url(r'^$', news_views.home, name='home'),
+	url(r'^contact/$', news_views.contact, name='contact'),
+    url(r'^about/$', trydjango18_views.about, name='about'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/', include('registration.backends.default.urls'))
+    url(r'^accounts/', include(accounts_urls, namespace='accounts'))
+    #url(r'^accounts/', include('registration.backends.default.urls'))
 ]
 
 
