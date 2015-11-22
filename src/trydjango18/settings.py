@@ -46,9 +46,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Third Party Apps
     'crispy_forms',
-    'registration',
+    #'registration',
     # My Apps
     'newsletter',
+    'accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -141,3 +142,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # REGISTRATION_AUTO_LOGIN = True
 
 SITE_ID = 1
+
+AUTH_USER_MODEL = 'accounts.SomeUser'
+AUTHENTICATION_BACKENDS = ['accounts.backends.EmailAuthBackend']
