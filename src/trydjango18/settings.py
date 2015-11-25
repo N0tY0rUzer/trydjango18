@@ -144,4 +144,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 SITE_ID = 1
 
 AUTH_USER_MODEL = 'accounts.SomeUser'
-AUTHENTICATION_BACKENDS = ['accounts.backends.EmailAuthBackend']
+#AUTHENTICATION_BACKENDS = ['accounts.backends.EmailAuthBackend']

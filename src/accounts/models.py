@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
@@ -31,6 +32,7 @@ class MyUserManager(BaseUserManager):
         )
         user.is_admin = True
         user.is_superuser = True
+        user.is_staff = True
         user.save(using=self._db)
         return user
 
@@ -41,8 +43,9 @@ class SomeUser(AbstractBaseUser):
     '''
 
     email = models.EmailField('email address', unique=True, db_index=True)
-    joined = models.DateTimeField(auto_now_add=True)
+    joined = models.DateTimeField(default=datetime.datetime.now)
     is_active = models.BooleanField(default=True) #Default to False in order to activate via email
+    #is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False) #Default to False in order to prevent users from being admin when they register
     is_superuser = models.BooleanField(default=False)
 
@@ -60,3 +63,18 @@ class SomeUser(AbstractBaseUser):
 
     def __str__(self):
         return self.email
+
+    def has_perm(self, perm, obj=None):
+        """Does the user have a specific permission?"""
+        # Simplest possible answer: Yes, always
+        return True
+
+    def has_module_perms(self, app_label):
+        ''' In almost all cases returns True'''
+        return True
+
+    @property
+    def is_staff(self):
+        """Is the user a member of staff?"""
+        # Simplest possible answer: All admins are staff
+        return self.is_admin
