@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'registration',
     # My Apps
     'newsletter',
+    'accounts'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -138,4 +139,12 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # REGISTRATION-REDUX SETTINGS
 ACCOUNT_ACTIVATION_DAYS = 7
-REGISTRATION_AUTO_LOGIN = True
+REGISTRATION_EMAIL_SUBJECT_PREFIX = '[Django reg test app]'
+SEND_ACTIVATION_EMAIL = True
+REGISTRATION_AUTO_LOGIN = False
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'

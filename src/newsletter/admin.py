@@ -1,11 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
-
-# Relative import .models
 from .models import SignUp
-# Relative import .forms
 from .forms import SignUpForm
+
+from accounts.models import CustomUser
 
 '''Inherit the admin.ModelAdmin django object class'''
 class SignUpAdmin(admin.ModelAdmin):
@@ -18,3 +16,4 @@ class SignUpAdmin(admin.ModelAdmin):
 
 '''Register admin site with SignUp model and custom admin page'''
 admin.site.register(SignUp, SignUpAdmin)
+admin.site.register(CustomUser)
