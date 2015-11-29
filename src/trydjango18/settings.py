@@ -145,6 +145,10 @@ REGISTRATION_AUTO_LOGIN = False
 
 SITE_ID = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+''' This is how you upgrade from the auto accounts/profile to send login
+to where ever you want.. in this case the root dir "/" '''
+LOGIN_REDIRECT_URL = '/'
+
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
