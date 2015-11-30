@@ -51,12 +51,20 @@
 
 
 {% block content %}
+
 {% if request.user.is_authenticated %}
 <h1>You are logged in!</h1>
 
-<!-- Only shows up for admin user -->
-{{ queryset }}
+	{% if queryset %}
+		<!-- Only shows up for admin user -->
+		<h2>Welcome Staff!</h2>
+		<table class="table">
+		{% for instance in queryset %}
+			<tr><td>{{ forloop.counter }}</td><td>{{ instance }}</td><td>{{ instance.full_name }}</td><td>{{ instance.timestamp|timesince }}</td></tr>
+		{% endfor %}
+		</table>
 
+	{% endif %}
 
 {% else %}
 <div class="row">
@@ -82,7 +90,7 @@
 		<span class="fa-stack fa-lg fa-5x">
 			<i class="fa fa-circle-o-notch fa-stack-2x"></i>
 			<!-- <i class="fa fa-square-o fa-stack-2x"></i> -->
-			<i class="fa fa-github fa-stack-1x"></i>
+			<i class="fa fa-code fa-stack-1x"></i>
 		</span>
 		</p>
 	</div>
