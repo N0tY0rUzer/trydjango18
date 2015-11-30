@@ -19,34 +19,42 @@
     <!-- Included files are included right at rendering time -->
     {% include 'head_css.html' %}
 
-    
+    {% block style %}
+
+
+    {% endblock %}
+
+
   </head>
 
 
 
 
   <body>
-  {% include 'navbar.html' %}  
-   
+    {% include 'navbar.html' %}
+
     <!-- Wrap Bootstrap in class='container' . This will also provide some padding around edges of elements -->
     <!-- container-fluid will remove the padding; allowing elements to touch sides of screen -->
+
+    {% block jumbotron %}
+
+
+    {% endblock %}
+
     <div class="container">
-    
+
       <!-- Blocks mark inheritance area. This 'block' tag will display the jumbotron info from home.html's jumbotron block tag -->
-      {% block jumbotron %}
-      
-
-      {% endblock %}
 
 
-      {% block content %}
 
-      {% endblock %}
-      
+    {% block content %}
+
+    {% endblock %}
+
 
     </div> <!-- /container -->
 
     {% include 'javascript.html' %}
-    
+
   </body>
 </html>

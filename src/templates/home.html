@@ -7,10 +7,22 @@
 <!-- Block level context variable "super" pulls head_title content from parent document and inserts   -->
 {% block head_title %} Welcome | {{ block.super}} {% endblock %}
 
+{% block style %}
+<style>
+.navbar-static-top{
+	margin-bottom: 0px #E81E1A !important;
+}
+.jumbotron {
+	background-color: #E81E1A;
+	color: #fff;
+}
+</style>
+{% endblock %}
 
 
 {% block jumbotron %}
 <div class="jumbotron">
+<div class="container">
 <div class="row">
 	<!-- The minimum amount the size of screen can be while still being column of 6 -->
 	<div class="col-sm-6">
@@ -25,7 +37,7 @@
 
 	</div>
 
-
+</div>
 </div>
 </div>
 {% endblock %}
@@ -39,7 +51,7 @@
 
 
 
-	<!-- E.g col-xs-3 will set the minimum amount the screen can be while still being a column of 3 to xtra small; 
+	<!-- E.g col-xs-3 will set the minimum amount the screen can be while still being a column of 3 to xtra small;
 	     Essentially, no matter what screen size you're on it will be a column of 3. AKA you can essentially set 'defaults' with xs -->
     <!-- pull-right compiles to float: right!important; -->
 	<div class="col-sm-3 pull-right">

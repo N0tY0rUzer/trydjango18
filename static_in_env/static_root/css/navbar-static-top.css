@@ -3,5 +3,31 @@ body {
 }
 
 .navbar-static-top {
-  margin-bottom: 19px;
+  background-color: #E81E1A !important;
+  border-color: #C50909 !important;
+  margin-bottom: 0px;
+}
+
+.navbar-default .navbar-brand {
+    color: #FFF;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #777;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #999;
+}
+.navbar-default .navbar-toggle {
+    background-color: #E81E1A !important;
+    border-color: #E81E1A !important;
+}
+.navbar-default .navbar-toggle:hover {
+    background-color: #999 !important;
+    border-color: #E81E1A !important;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #C50909 !important;
 }
