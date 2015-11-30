@@ -21,6 +21,7 @@
 
 
 {% block jumbotron %}
+{% if not request.user.is_authenticated %}
 <div class="jumbotron">
 <div class="container">
 <div class="row">
@@ -43,17 +44,22 @@
 </div>
 </div>
 </div>
+{% endif %}
 {% endblock %}
 
 
 
 
 {% block content %}
+{% if request.user.is_authenticated %}
+<h1>You are logged in!</h1>
+
+<!-- Only shows up for admin user -->
+{{ queryset }}
+
+
+{% else %}
 <div class="row">
-
-
-
-
 	<!-- E.g col-xs-3 will set the minimum amount the screen can be while still being a column of 3 to xtra small;
 	     Essentially, no matter what screen size you're on it will be a column of 3. AKA you can essentially set 'defaults' with xs -->
     <!-- pull-right compiles to float: right!important; -->
@@ -71,10 +77,17 @@
 
 	</div>
 	<div class='col-sm-3'>
-		<p class='lead text-align-center'>Built with Django &amp; Bootstrap</p>
+		<p class='lead text-align-center'>Django &amp; Bootstrap
+		<br/><br/>
+		<span class="fa-stack fa-lg fa-5x">
+			<i class="fa fa-circle-o-notch fa-stack-2x"></i>
+			<!-- <i class="fa fa-square-o fa-stack-2x"></i> -->
+			<i class="fa fa-github fa-stack-1x"></i>
+		</span>
+		</p>
 	</div>
 	<div class='col-sm-3'>
-		<p class='lead text-align-center'>Created for starters of all kinds.
+		<p class='lead text-align-center'>Created for starters
 		<br/>
 		<span class="fa-stack fa-lg fa-5x">
 			<i class="fa fa-comment-o fa-stack-2x"></i>
@@ -85,7 +98,7 @@
 		<p class='lead text-align-center'>Always Open Source
 		<br/><br/>
 		<span class="fa-stack fa-lg fa-5x">
-			<i class="fa fa-circle-o-notch fa-stack-2x fa-spin"></i>
+			<i class="fa fa-circle-o-notch fa-stack-2x"></i>
 			<!-- <i class="fa fa-square-o fa-stack-2x"></i> -->
 			<i class="fa fa-github fa-stack-1x"></i>
 		</span>
@@ -94,4 +107,5 @@
 	</div>
 
 </div>
+{% endif %}
 {% endblock %}

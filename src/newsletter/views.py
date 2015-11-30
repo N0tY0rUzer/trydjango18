@@ -6,13 +6,12 @@ from .forms import ContactForm, SignUpForm
 
 # Create your views here.
 def home(request):
-	title = "Welcome"
+	title = "Sign Up Now"
 
 	'''Create SignUpForm object from POST data(if sent) or None if not sent'''
 	form = SignUpForm(request.POST or None)
 
-
-	'''Create context dictionary object containing the form instance(i.e the empty form) 
+	'''Create context dictionary object containing the form instance(i.e the empty form)
 	This will change if form.is_valid() returns true.'''
 	context = {
 		"title": title,
@@ -30,10 +29,10 @@ def home(request):
 		and to populate things such as null=False fields, and to further secure that only clean data is passed to the DB'''
 		instance = form.save(commit=False)
 
-		'''It is advised to grab data from forms with the cleaned_data.get('<field>') method. 
+		'''It is advised to grab data from forms with the cleaned_data.get('<field>') method.
 		In this way, you can prevent from accidentally grabbing unsanitized data '''
 		full_name = form.cleaned_data.get('full_name')
-		
+
 
 		'''Create a check for the full_name field from cleaned_data'''
 		if not full_name:
@@ -42,7 +41,7 @@ def home(request):
 
 		'''Set the form instance\'s full_name field to the full_name variable'''
 		instance.full_name = full_name
-		
+
 		'''Commit the form instance to the DB'''
 		instance.save()
 
@@ -50,7 +49,12 @@ def home(request):
 		context = {
 			"title": "Thank yee!"
 		}
-		
+
+	if request.user.is_authenticated() and request.user.is_staff:
+		context = {
+			"queryset" : [123, 456]
+		}
+
 	return render(request, "home.html", context)
 
 
