@@ -1,7 +1,10 @@
+src/trydjango18/old_settings.py
+
+
 Include/*
 Lib/*
 Scripts/*
- 
+
 *pip-selfcheck.json
 *.sublime-project
 *.sublime-workspace
