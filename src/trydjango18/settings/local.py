@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.contrib.sites.models import Site
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -73,6 +74,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'trydjango18.context_processors.site',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -143,6 +145,7 @@ SEND_ACTIVATION_EMAIL = True
 REGISTRATION_AUTO_LOGIN = False
 
 SITE_ID = 1
+SITE_URL = Site.objects.get_current().domain
 
 ''' This is how you upgrade from the auto accounts/profile to send login
 to where ever you want.. in this case the root dir "/" '''

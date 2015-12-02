@@ -1,3 +1,24 @@
+body {
+  min-height: 100% !important;
+}
+
 .text-align-center {
   text-align: center;
+}
+
+.marketing-text {
+  color: purple;
+}
+
+ul.unstyled {
+  list-style: none;
+  padding: 0;
+}
+
+footer {
+  background: #333;
+  color: #eee;
+  font-size: 11px;
+  padding: 20px;
+  margin-top: 10%;
 }

@@ -9,3 +9,4 @@ Scripts/*
 *pip-selfcheck.json
 *.sublime-project
 *.sublime-workspace
+*.pyc
