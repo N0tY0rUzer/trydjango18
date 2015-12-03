@@ -15,6 +15,11 @@ ul.unstyled {
   padding: 0;
 }
 
+.jumbotron {
+	background-color: #E81E1A;
+	color: #fff;
+}
+
 footer {
   background: #333;
   color: #eee;

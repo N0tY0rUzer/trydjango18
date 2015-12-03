@@ -7,17 +7,13 @@
 <!-- Block level context variable "super" pulls head_title content from parent document and inserts   -->
 {% block head_title %} Welcome | {{ block.super}} {% endblock %}
 
-{% block style %}
+<!-- {% block style %}
 <style>
 .navbar-static-top{
 	margin-bottom: 0px #E81E1A !important;
 }
-.jumbotron {
-	background-color: #E81E1A;
-	color: #fff;
-}
 </style>
-{% endblock %}
+{% endblock %} -->
 
 
 {% block jumbotron %}
@@ -86,7 +82,7 @@
 
 	</div>
 	<div class='col-sm-3'>
-		<p class='lead text-align-center'><span class="marketing-text">Django &amp; Bootstrap</span>
+		<p class='lead text-align-center marketing-text'><span>Django &amp; Bootstrap</span>
 		<br/><br/>
 		<span class="fa-stack fa-lg fa-5x">
 			<i class="fa fa-circle-o-notch fa-stack-2x"></i>
@@ -96,7 +92,7 @@
 		</p>
 	</div>
 	<div class='col-sm-3'>
-		<p class='lead text-align-center'><span class="marketing-text">Powered By Devlopers</span>
+		<p class='lead text-align-center marketing-text'><span>Powered By Devlopers</span>
 		<br/>
 		<span class="fa-stack fa-lg fa-5x">
 			<i class="fa fa-comment-o fa-stack-2x"></i>
@@ -104,7 +100,7 @@
 		</p>
 	</div>
 	<div class='col-sm-3'>
-		<p class='lead text-align-center'><span class="marketing-text">Always Open Source</span>
+		<p class='lead text-align-center marketing-text'><span>Always Open Source</span>
 		<br/><br/>
 		<span class="fa-stack fa-lg fa-5x">
 			<i class="fa fa-circle-o-notch fa-stack-2x"></i>
