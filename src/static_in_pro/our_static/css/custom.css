@@ -25,5 +25,9 @@ footer {
   color: #eee;
   font-size: 11px;
   padding: 20px;
-  margin-top: 10%;
+  margin-top: 12%;
+}
+
+footer::after {
+    background: #333;
 }
