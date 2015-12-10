@@ -1,4 +1,4 @@
-body {
+html,body {
   min-height: 100% !important;
 }
 
@@ -14,4 +14,8 @@ ul.unstyled {
 .jumbotron {
 	background-color: #E81E1A;
 	color: #fff;
+}
+
+body > div > div > div.footer > div > div > div.col-sm-4 > p {
+  font-size: 12px;
 }
