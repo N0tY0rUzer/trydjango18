@@ -42,16 +42,19 @@
     {% endblock %}
 
     <div class="container">
+      <div class="wrapper">
 
       <!-- Blocks mark inheritance area. This 'block' tag will display the jumbotron info from home.html's jumbotron block tag -->
 
 
+      <div class="content">
+      {% block content %}
 
-    {% block content %}
+      {% endblock %}
+      </div>
 
-    {% endblock %}
-
-
+      <div class="footer"></div>
+      </div>
     </div>
 
     {% include 'javascript.html' %}
