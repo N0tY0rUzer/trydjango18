@@ -1,5 +1,32 @@
 html,body {
-  min-height: 100% !important;
+  /*margin: 0;
+  padding: 0;*/
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body {
+  display: table;
+}
+
+.container {
+  height: auto;
+}
+
+.content {
+  padding-bottom: 100px;
+}
+
+.footer {
+  display: table-row;
+  height: 1px;
+  /*width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;*/
+  background-color: #333;
+  color: #fff;
+
 }
 
 .text-align-center {
