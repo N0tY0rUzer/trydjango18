@@ -1,6 +1,6 @@
 .navbar-static-top {
-  background-color: #E81E1A !important;
-  border-color: #C50909 !important;
+  background-color: #34671D !important;
+  border-color: #1AC509 !important;
   margin-bottom: 0px;
 }
 
@@ -16,14 +16,14 @@
     color: #999;
 }
 .navbar-default .navbar-toggle {
-    background-color: #E81E1A !important;
-    border-color: #E81E1A !important;
+    background-color: #34671D !important;
+    border-color: #1AC509 !important;
 }
 .navbar-default .navbar-toggle:hover {
-    background-color: #999 !important;
-    border-color: #E81E1A !important;
+    background-color: #CAE0F3 !important;
+    border-color: #2DE81A !important;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-color: #C50909 !important;
+    border-color: #2DE81A !important;
 }

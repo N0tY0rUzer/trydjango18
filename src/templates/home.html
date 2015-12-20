@@ -7,14 +7,6 @@
 <!-- Block level context variable "super" pulls head_title content from parent document and inserts   -->
 {% block head_title %} Welcome | {{ block.super}} {% endblock %}
 
-<!-- {% block style %}
-<style>
-.navbar-static-top{
-	margin-bottom: 0px #E81E1A !important;
-}
-</style>
-{% endblock %} -->
-
 
 {% block jumbotron %}
 {% if not request.user.is_authenticated %}
@@ -23,10 +15,10 @@
 <div class="row">
 	<!-- The minimum amount the size of screen can be while still being column of 6 -->
 	<div class="text-align-center">
-		<h1>Learn by doing</h1>
-		<p class='lead text-align-center'>AlphAlphA was created as a platform for developers/designers/scientists to document, notate and share their solutions to challenging field related issues on a situation by situation basis...</p>
+		<h1>Try Django 1.8</h1>
+		<p class='lead text-align-center'>The MVP Landing project is designed to get your project started. The goal is to help you launch as soon as possible with the least amount of investment using time or money. Join Us today.</p>
 		<p>
-		<a class="btn btn-lg btn-primary" href="{% url 'registration_register' %}" role="button">Join Us &raquo;</a>
+		<a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join Us &raquo;</a>
 		</p>
 	</div>
 
@@ -68,21 +60,8 @@
 	<!-- E.g col-xs-3 will set the minimum amount the screen can be while still being a column of 3 to xtra small;
 	     Essentially, no matter what screen size you're on it will be a column of 3. AKA you can essentially set 'defaults' with xs -->
     <!-- pull-right compiles to float: right!important; -->
-	<!-- <div class="col-sm-3 pull-right">
-
-		<p class='lead text-align-center'>{{ title }}</p>
-
-
-		<form method='POST' action=''>{% csrf_token %}
-			{{ form|crispy }}
-
-			<input class="btn btn-primary" type='submit' value='Sign Up'/>
-
-		</form>
-
-	</div> -->
-	<div class='col-sm-4'>
-		<p class='lead text-align-center'><span>Django &amp; Bootstrap</span>
+	<div class='col-sm-3 push'>
+		<p class='lead text-align-center'>Django &amp; Bootstrap
 		<br/><br/>
 		<span class="fa-stack fa-lg fa-5x">
 			<i class="fa fa-circle-o-notch fa-stack-2x"></i>
@@ -91,16 +70,16 @@
 		</span>
 		</p>
 	</div>
-	<div class='col-sm-4'>
-		<p class='lead text-align-center'><span>Powered By Devlopers</span>
+	<div class='col-sm-3 push'>
+		<p class='lead text-align-center'>Created for starters
 		<br/>
 		<span class="fa-stack fa-lg fa-5x">
 			<i class="fa fa-comment-o fa-stack-2x"></i>
 			<i class="fa fa-bolt fa-1x"></i>
 		</p>
 	</div>
-	<div class='col-sm-4'>
-		<p class='lead text-align-center'><span>Always Open Source</span>
+	<div class='col-sm-3 push'>
+		<p class='lead text-align-center'>Always Open Source
 		<br/><br/>
 		<span class="fa-stack fa-lg fa-5x">
 			<i class="fa fa-circle-o-notch fa-stack-2x"></i>
@@ -110,7 +89,20 @@
 		</p>
 
 	</div>
+	<div class="col-sm-3 push">
 
-</div> <!-- end row -->
+		<p class='lead text-align-center'>{{ title }}</p>
+
+
+		<form class="text-align-center" method='POST' action=''>{% csrf_token %}
+			{{ form|crispy }}
+
+			<input class="btn btn-primary" type='submit' value='Sign Up'/>
+
+		</form>
+
+	</div>
+
+</div>
 {% endif %}
 {% endblock %}

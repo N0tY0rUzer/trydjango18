@@ -10,3 +10,4 @@ Scripts/*
 *.sublime-project
 *.sublime-workspace
 *.pyc
+*__pycache__
